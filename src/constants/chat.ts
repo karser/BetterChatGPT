@@ -18,6 +18,7 @@ Carefully heed the user's instructions.
 Respond using Markdown.`;
 
 export const modelOptions: ModelOptions[] = [
+  'gpt-4.1-mini',
   'gpt-4o-mini',
   'gpt-4o',
   'o1-mini',
@@ -28,9 +29,10 @@ export const modelOptions: ModelOptions[] = [
   'gpt-3.5-turbo-0125',
 ];
 
-export const defaultModel = 'gpt-4o-mini';
+export const defaultModel = 'gpt-4.1-mini';
 
 export const modelMaxToken = {
+  'gpt-4.1-mini': 128000,
   'gpt-4o-mini': 128000,
   'gpt-4o': 128000,
   'o1-mini': 128000,
@@ -46,6 +48,10 @@ export const modelMaxToken = {
 
 export const modelCost = {
   'gpt-4o': {
+    prompt: { price: 0.005, unit: 1000 },
+    completion: { price: 0.015, unit: 1000 },
+  },
+  'gpt-4.1-mini': {
     prompt: { price: 0.005, unit: 1000 },
     completion: { price: 0.015, unit: 1000 },
   },
